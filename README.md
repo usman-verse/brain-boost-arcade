@@ -7,6 +7,6 @@ Wanna Try?
 
 If you're bored during a break, feel free to give it a try!
 
-👉 
+👉 https://usman-verse.github.io/brain-boost-arcade/
 
 No installation required - just open it in your browser and play.
