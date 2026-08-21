@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Boost Arcade</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>🧠 Brain Boost Arcade</h1>
+    <p>Choose a game and train your memory, focus, speed and problem-solving.</p>
+  </header>
+
+  <nav class="game-nav" aria-label="Choose a brain game">
+    <button class="game-tab active" data-game="puzzle">🔢 Sliding Puzzle</button>
+    <button class="game-tab" data-game="memory">🃏 Memory Match</button>
+    <button class="game-tab" data-game="reaction">⚡ Reaction Test</button>
+    <button class="game-tab" data-game="sequence">🔢 Sequence Recall</button>
+    <button class="game-tab" data-game="stroop">🎨 Color Focus</button>
+  </nav>
+
+  <main>
+    <section id="game-puzzle" class="game-panel active">
+      <h2>Sliding Puzzle</h2>
+      <p>Arrange the numbers from 1 to 8 as quickly as possible.</p>
+      <div class="stats"><span id="puzzleTimer">⏱ Time: 0s</span><span id="puzzleMoves">Moves: 0</span></div>
+      <div id="puzzle" class="puzzle-grid"></div>
+      <button id="shuffleBtn" class="primary">🔀 Shuffle</button>
+    </section>
+
+    <section id="game-memory" class="game-panel">
+      <h2>Memory Match</h2>
+      <p>Find all matching pairs using as few moves as possible.</p>
+      <div class="stats"><span id="memoryMoves">Moves: 0</span><span id="memoryPairs">Pairs: 0/8</span></div>
+      <div id="memoryBoard" class="memory-grid"></div>
+      <button id="memoryNew" class="primary">🔄 New Game</button>
+    </section>
+
+    <section id="game-reaction" class="game-panel">
+      <h2>Reaction Test</h2>
+      <p>Wait for the screen to turn green, then click as fast as you can.</p>
+      <div id="reactionArea" class="reaction-area waiting">
+        <div id="reactionMessage">Press Start when you're ready.</div>
+      </div>
+      <div class="stats"><span id="reactionBest">🏆 Best: —</span><span id="reactionLast">Last: —</span></div>
+      <button id="reactionStart" class="primary">▶ Start Test</button>
+    </section>
+
+    <section id="game-sequence" class="game-panel">
+      <h2>Sequence Recall</h2>
+      <p>Remember the numbers shown, then enter the sequence.</p>
+      <div id="sequenceDisplay" class="sequence-display">Ready?</div>
+      <input id="sequenceInput" class="sequence-input" inputmode="numeric" maxlength="20" placeholder="Type the sequence">
+      <div class="stats"><span id="sequenceLevel">Level: 1</span><span id="sequenceScore">Score: 0</span></div>
+      <button id="sequenceStart" class="primary">▶ Start Level</button>
+    </section>
+
+    <section id="game-stroop" class="game-panel">
+      <h2>Color Focus</h2>
+      <p>Click the button matching the <strong>ink color</strong>, not the word.</p>
+      <div id="stroopWord" class="stroop-word">READY</div>
+      <div id="stroopChoices" class="color-choices"></div>
+      <div class="stats"><span id="stroopScore">Score: 0</span><span id="stroopTime">Time: 30s</span></div>
+      <button id="stroopStart" class="primary">▶ Start 30s Challenge</button>
+    </section>
+  </main>
+
+  <div id="messageBox" class="message-box hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>
